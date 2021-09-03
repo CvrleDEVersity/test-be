@@ -10,9 +10,9 @@ import { User } from "./User.entity";
 
 @Entity()
 export class Posts extends BaseEntity {
-  @IsNumber()
   @PrimaryGeneratedColumn({ name: "index" })
-  id?: number;
+  id?: string;
+
   @Column({ nullable: true })
   @IsString()
   title?: string;

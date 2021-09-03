@@ -1,7 +1,15 @@
+import { IsNumber, IsString } from "class-validator";
+
 export class AddressDTO {
-  id?: string;
+  @IsString()
   street?: string;
+
+  @IsString()
   suite?: string;
+
+  @IsString()
   city?: string;
+
+  @IsString()
   zipcode?: string;
 }

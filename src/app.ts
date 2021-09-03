@@ -16,7 +16,7 @@ createConnection({
   port: 5432,
   username: "postgres",
   password: "Finalfanta2",
-  database: "test-typedi",
+  database: "test",
   entities: [__dirname + "/models/*.*"],
   synchronize: true,
 })

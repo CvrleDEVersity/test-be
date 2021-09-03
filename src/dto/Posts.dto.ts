@@ -1,5 +1,11 @@
+import { IsNumber, IsString } from "class-validator";
+
 export class PostDTO {
-  id?: number;
+  @IsString()
   title?: string;
+
+  @IsString()
   body?: string;
+
+  user: any;
 }

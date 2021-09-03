@@ -4,9 +4,6 @@ import { CompanyDTO } from "../dto/Company.dto";
 import { PostDTO } from "../dto/Posts.dto";
 import { UserDTO } from "../dto/User.dto";
 import { Posts } from "../models/Posts.entity";
-import { AddressRepo } from "../address/AddressRepository";
-import { CompanyRepo } from "../company/CompanyReposutory";
-import { PostsRepo } from "../posts/PostsRepository";
 import { UserRepository } from "./UserRepository";
 import { AddressService } from "../address/AddressService";
 import { CompanyService } from "../company/CompanyService";
@@ -37,7 +34,7 @@ export default class UserService {
       const currentUser = await this.userRepo.saveUsers(user);
       user.post?.forEach(async (current: any) => {
         if (currentUser) {
-          let post = new Posts();
+          let post = new PostDTO();
           post.user = currentUser;
           post.title = current.title;
           post.body = current.body;

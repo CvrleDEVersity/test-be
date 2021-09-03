@@ -1,6 +1,12 @@
+import { IsNumber, IsString } from "class-validator";
+
 export class CompanyDTO {
-  id?: string;
+  @IsString()
   bs?: string;
+
+  @IsString()
   catchPhrase?: string;
+
+  @IsString()
   name?: string;
 }
