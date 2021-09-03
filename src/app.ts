@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { Action, createExpressServer, useContainer } from "routing-controllers";
-import { createConnection, useContainer as UseTypeOrmContainer } from "typeorm";
+import { createConnection, useContainer as useTypeOrmContainer } from "typeorm";
 import { AuthControler } from "./auth/AuthControler";
 import UserController from "./user/UserController";
 import * as jwt from "jsonwebtoken";
@@ -9,7 +9,7 @@ import { Container as ExtenContainer } from "typeorm-typedi-extensions";
 
 // creates express app, registers all controller routes and returns you express app instance
 useContainer(Container);
-UseTypeOrmContainer(ExtenContainer);
+useTypeOrmContainer(ExtenContainer);
 createConnection({
   type: "postgres",
   host: "localhost",
